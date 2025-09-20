@@ -3,288 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Bangun Rumah Profesional</title>
+    <title>Galeri Portofolio</title>
     <style>
-        /* CSS untuk styling */
-        :root {
-            --primary-color: #004d40; /* Hijau tua */
-            --secondary-color: #00796b; /* Hijau sedang */
-            --accent-color: #ffb300; /* Kuning keemasan */
-            --text-color: #333;
-            --light-bg: #f4f4f4;
-            --white: #ffffff;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            font-family: var(--font-family);
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
+            background-color: #000000;
+            color: #333;
         }
 
         .container {
-            max-width: 1100px;
+            width: 90%;
             margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
+            padding: 20px 0;
         }
 
-        /* Header */
-        .header {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 0;
+        header {
             text-align: center;
+            padding: 20px 0;
+            background: #FFFF00;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        header h1 {
+            margin: 0;
         }
 
-        .header p {
-            font-size: 1.2rem;
-            font-weight: 300;
+        .gallery-section {
+            padding: 20px 0;
         }
 
-        /* Hero Section */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1570129477014-ef6a546c189b') no-repeat center center/cover;
-            color: var(--white);
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .gallery-section h2 {
             text-align: center;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            color: #555;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
 
-        .hero-content {
-            z-index: 1;
-            padding: 2rem;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-        }
-
-        .hero .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background: #ffc107;
-        }
-
-        /* Layanan Section */
-        .layanan {
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .layanan h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-        }
-
-        .layanan-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .layanan-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .layanan-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .layanan-item h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .layanan-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Tentang Kami Section */
-        .tentang-kami {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 4rem 0;
+        .gallery-item {
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
             text-align: center;
         }
 
-        .tentang-kami h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .tentang-kami p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 1.1rem;
+        .gallery-item .caption {
+            padding: 15px;
         }
 
-        /* Kontak Section */
-        .kontak {
-            padding: 4rem 0;
+        .gallery-item iframe {
+            width: 100%;
+            height: 250px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
             text-align: center;
-        }
-
-        .kontak h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-
-        .kontak-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .kontak-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            min-width: 250px;
-        }
-
-        .kontak-item h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .kontak-item a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .kontak-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 1.5rem 0;
+            padding: 20px 0;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    
-    <header class="header">
-        <div class="container">
-            <h1>Nama Perusahaan Anda</h1>
-            <p>Ahli dalam Jasa Bangun dan Renovasi Rumah Impian</p>
-        </div>
+
+    <header>
+        <h1>Galeri Portofolio Kami</h1>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Wujudkan Rumah Impian Anda Bersama Kami</h2>
-            <a href="https://wa.me/6285150610800" class="btn">Konsultasi Sekarang</a>
-        </div>
-    </section>
-
-    <section id="layanan" class="layanan">
-        <div class="container">
-            <h2>Layanan Kami</h2>
-            <div class="layanan-grid">
-                <div class="layanan-item">
-                    <h3>Bangun Rumah Baru</h3>
-                    <p>Mulai dari desain arsitektur hingga serah terima kunci, kami melayani pembangunan rumah dari nol dengan kualitas terbaik.</p>
+    <div class="container">
+        
+        <section id="pembangunan" class="gallery-section">
+            <h2>Portofolio Desain</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/storage/emulated/0/web/aset/1.jpg alt="Proyek Pembangunan A">
+                    <div class="caption">
+                        <h3>Proyek A</h3>
+                        <p>Deskripsi singkat tentang proyek ini.</p>
+                    </div>
                 </div>
-                <div class="layanan-item">
-                    <h3>Renovasi Rumah</h3>
-                    <p>Ubah tampilan rumah lama Anda menjadi modern dan fungsional. Kami siap membantu renovasi besar atau kecil.</p>
-                </div>
-                <div class="layanan-item">
-                    <h3>Desain Interior & Eksterior</h3>
-                    <p>Rancang rumah Anda dengan sentuhan profesional. Kami menyediakan jasa desain yang sesuai dengan selera dan kebutuhan Anda.</p>
-                </div>
-                <div class="layanan-item">
-                    <h3>Perhitungan RAB</h3>
-                    <p>Dapatkan perencanaan anggaran yang jelas dan transparan. Kami akan membantu Anda menghitung Rencana Anggaran Biaya (RAB) secara detail.</p>
+                <div class="gallery-item">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_ANDA" frameborder="0" allowfullscreen></iframe>
+                    <div class="caption">
+                        <h3>Video Pembangunan</h3>
+                        <p>Tonton video dari YouTube ini.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="tentang-kami" class="tentang-kami">
-        <div class="container">
-            <h2>Tentang Kami</h2>
-            <p>Kami adalah tim profesional yang berpengalaman dalam bidang konstruksi dan arsitektur. Dengan komitmen pada kualitas, transparansi, dan kepuasan pelanggan, kami bertekad membantu setiap klien mewujudkan rumah impian mereka. Kami menggunakan material berkualitas tinggi dan didukung oleh tenaga ahli yang kompeten di bidangnya.</p>
-        </div>
-    </section>
-
-    <section id="kontak" class="kontak">
-        <div class="container">
-            <h2>Hubungi Kami</h2>
-            <div class="kontak-info">
-                <div class="kontak-item">
-                    <h3>Telepon</h3>
-                    <p><a href="tel:+628123456789">+62 812-3456-789</a></p>
+        <section id="desain" class="gallery-section">
+            <h2>Portofolio Desain</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300.png?text=Desain+1" alt="Desain 1">
+                    <div class="caption">
+                        <h3>Desain 1</h3>
+                        <p>Deskripsi singkat tentang desain ini.</p>
+                    </div>
                 </div>
-                <div class="kontak-item">
-                    <h3>Email</h3>
-                    <p><a href="mailto:info@perusahaananda.com">info@perusahaananda.com</a></p>
-                </div>
-                <div class="kontak-item">
-                    <h3>Alamat</h3>
-                    <p>Jl. Pembangunan No. 123, Kota Anda, Indonesia</p>
+                <div class="gallery-item">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_LAIN" frameborder="0" allowfullscreen></iframe>
+                    <div class="caption">
+                        <h3>Video Desain</h3>
+                        <p>Video ini menampilkan proses desain.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Nama Perusahaan Anda. Semua Hak Cipta Dilindungi.</p>
-        </div>
+    <footer>
+        <p>&copy; 2024 Nama Anda. Hak Cipta Dilindungi.</p>
     </footer>
 
 </body>
